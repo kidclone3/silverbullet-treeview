@@ -45,6 +45,7 @@ export async function hideTree() {
 export async function showTreeIfEnabled() {
   try {
     const env = await system.getEnv();
+    console.log("env", env);
     if (env === "server") {
       return;
     }
@@ -119,13 +120,13 @@ export async function showTree() {
         <div class="treeview-header">
           <div class="treeview-actions">
             <div class="treeview-actions-left">
-              <button type="button" data-treeview-action="expand-all" title="Expand all">${iconFolderPlus}</button>
-              <button type="button" data-treeview-action="collapse-all" title="Collapse all">${iconFolderMinus}</button>
-              <button type="button" data-treeview-action="reveal-current-page" title="Reveal current page">${iconNavigation2}</button>
-              <button type="button" data-treeview-action="refresh" title="Refresh treeview">${iconRefresh}</button>
+              <button type="button" data-treeview-action="expand-all" title="Expand all" class="tooltip">${iconFolderPlus}</button>
+              <button type="button" data-treeview-action="collapse-all" title="Collapse all" class="tooltip">${iconFolderMinus}</button>
+              <button type="button" data-treeview-action="reveal-current-page" title="Reveal current page" class="tooltip">${iconNavigation2}</button>
+              <button type="button" data-treeview-action="refresh" title="Refresh treeview" class="tooltip">${iconRefresh}</button>
             </div>
             <div class="treeview-actions-right">
-              <button type="button" data-treeview-action="close-panel" title="Close tree">${iconXCircle}</button>
+              <button type="button" data-treeview-action="close-panel" title="Close tree" class="tooltip">${iconXCircle}</button>
             </div>
           </div>
         </div>
